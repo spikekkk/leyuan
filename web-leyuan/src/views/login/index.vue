@@ -18,6 +18,7 @@
 <script>
  // import { requestLogin } from '../api/api';
   //import NProgress from 'nprogress'
+
   export default {
     data() {
       return {
@@ -51,7 +52,22 @@
             this.logining = true;
             //NProgress.start();
             var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
-            // requestLogin(loginParams).then(data => {
+           this.$axios.post("https://www.easy-mock.com/mock/5bd041c055163069fe1fb7d7/leyuanspa/login",loginParams).then((response)=>
+           
+           {   console.log(loginParams);
+                 this.logining = false;
+               //  let { msg, code, user } = response.data;
+                 console.log(response)
+              if( response.status !== 200){
+                     this.$message({
+                    message: msg,
+                    type: 'error'
+                });
+              }
+
+           }).catch((error)=>{console.log(error)})
+           
+           // requestLogin(loginParams).then(data => {
             //   this.logining = false;
             //   //NProgress.done();
             //   let { msg, code, user } = data;
