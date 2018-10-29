@@ -1,7 +1,11 @@
 <template>
 <div id="layout" style="height：100%">
       <el-container > 
-  <el-header>Header</el-header>
+  <el-header style="padding:0 0">
+
+<Header></Header>
+      
+  </el-header>
   <el-container>
     <el-aside id="aside" style="width: 200px;">
     <SideBarItem></SideBarItem>	    
@@ -14,7 +18,7 @@
 </template>
 <script>
 import SideBarItem from './components/SideBarItem';
-
+import Header from './components/Header'
 export default{
 
 data(){
@@ -24,8 +28,8 @@ data(){
 },
 
 components:{
-
-'SideBarItem':SideBarItem
+'Header':Header,
+'SideBarItem':SideBarItem,
 
 }
 
@@ -33,7 +37,7 @@ components:{
     
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
   body > .el-container {
     margin-bottom: 40px;
     height: 100%;
@@ -62,15 +66,7 @@ components:{
   }
   
 
-  
-//   .el-container:nth-child(5) .el-aside,
-//   .el-container:nth-child(6) .el-aside {
-//     line-height: 260px;
-//   }
-  
-//   .el-container:nth-child(7) .el-aside {
-//     line-height: 320px;
-//   }
+
 
 
 </style>

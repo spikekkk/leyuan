@@ -7,23 +7,26 @@ import layout from '../views/layout/index.vue';
 
 export default new Router({
 
-    routes:[
-        {
-         path: '/login',
-         name: 'login',
-         component:Login
-       },
-      
+  routes: [{
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
 
-       { path:'/components',
-        name:'layout',
-        component:layout
-        } ,
-    
-        
-        { path: '*', redirect: '/login' },
-   ]
-   
+{
+  path: '/layout',
+  name: 'layout',
+  meta: {
+    requireAuth: true, // 该路由项需要权限校验
+  },
+  component: layout
+},
+
+
+    {
+      path: '*',
+      redirect: '/login'
+    },
+  ]
+
 })
-
-

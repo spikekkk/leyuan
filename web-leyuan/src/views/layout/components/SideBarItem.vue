@@ -5,7 +5,7 @@
 
     <el-menu
       default-active="1"
-      unique-opened="true"
+      unique-opened
       class="el-menu-vertical-demo"
        @open="handleOpen" 
       @close="handleClose"
@@ -14,7 +14,7 @@
       active-text-color="#ffd04b"
       
       >
-      <el-submenu  v-bind:router="true" index="1">
+      <el-submenu  index="1">
         <template slot="title">
           <i class="el-icon-bell"></i>
           <span>会员管理</span>
